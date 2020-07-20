@@ -75,8 +75,15 @@ To use this plugin, add `flutter_freshchat` as a [dependency in your pubspec.yam
 import 'package:flutter_freshchat/flutter_freshchat.dart';
 ```
 
-Initialize the Freshchat app with `appID` and `appKey` which you could get from here: [Where to find App ID and App Key](https://support.freshchat.com/support/solutions/articles/229192)<br/><br/>
+Initialize the Freshchat app with `appID`, `appKey` & `domain` which you could get from here: [Where to find App ID and App Key](https://support.freshchat.com/support/solutions/articles/229192)<br/><br/>
 It has following [FreshchatConfig] properties:
+
+- `domain` Each Freshchat cluster falls in to one of this domains:
+  - US - https://msdk.freshchat.com (default)
+  - AU - https://msdk.au.freshchat.com
+  - EU - https://msdk.eu.freshchat.com
+  - IN - https://msdk.in.freshchat.com
+  - US2 - https://msdk.us2.freshchat.com
 
 - `cameraEnabled` property is used to either enable or disable camera
   within freshchat conversation widget. It default value is set to `true`.
@@ -90,22 +97,26 @@ It has following [FreshchatConfig] properties:
 - `responseExpectationEnabled` property is used to show exceptions that occur
   within freshchat conversation widget. It default value is set to `true`.
 
-- `showNotificationBanner` property is used enabled or disable in-app notfication
+- `showNotificationBanner` property is used enabled or disable in-app notification
   banner. It default value is set to `true`. (NOTE: IOS only).
 
-- `notificationSoundEnabled` property is used enabled or disable in-app notfication
+- `notificationSoundEnabled` property is used enabled or disable in-app notification
   sound. It default value is set to `true`. (NOTE: IOS only).
 
 ```dart
-await FlutterFreshchat.init(appID: 'YOUR_APP_ID_HERE', appKey: 'YOUR_APP_KEY_HERE');
+await FlutterFreshchat.init(
+  appID: 'YOUR_APP_ID_HERE', 
+  appKey: 'YOUR_APP_KEY_HERE',
+  domain: 'https://msdk.freshchat.com'
+  );
 ```
 
 Update the user info by setting by creating a `FreshchatUser` object
 
 ```dart
-FreshchatUser user = FreshchatUser.initail();
-user.email = "jhon@test.com";
-user.firstName = "jhon";
+FreshchatUser user = FreshchatUser.initial();
+user.email = "john@test.com";
+user.firstName = "john";
 user.lastName = "doe";
 user.phoneCountryCode = "+91";
 user.phone = "0123456789";
@@ -123,10 +134,10 @@ Identify the user user by usin email address or any way you uniquely identify th
 `externalID` is required and returns a `restoreID` you can save it and use to restore the chats
 
 ```dart
-await FlutterFreshchat.identifyUser(externalID: 'USER_UNQIUE_ID', restoreID: 'USER_RESTORE_ID');
+await FlutterFreshchat.identifyUser(externalID: 'USER_UNIQUE_ID', restoreID: 'USER_RESTORE_ID');
 ```
 
-Show conversation opens a conversation screen and also list all the other conversation if a list obejct is supplied to it. You can also pass a title for teh chat screen.
+Show conversation opens a conversation screen and also list all the other conversation if a list obejct is supplied to it. You can also pass a title for the chat screen.
 
 ```dart
 await FlutterFreshchat.showConversations(tags: const [], title: 'CHAT_SCREEN_TITLE');
