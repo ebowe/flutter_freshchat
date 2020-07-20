@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_freshchat (0.0.4):
+  - flutter_freshchat (0.0.5):
     - Flutter
   - path_provider (0.0.1):
     - Flutter
@@ -20,9 +20,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_freshchat: 6c8631baa242ca51e03fdb86c48db031429527d4
+  flutter_freshchat: 6820a1aa039fe8aa3ecd7180ef78ce4f78d0b09b
   path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
 
-PODFILE CHECKSUM: ebd43b443038e611b86ede96e613bd6033c49497
+PODFILE CHECKSUM: d231b65d6bea6d24555f84ca7901720538b5791f
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

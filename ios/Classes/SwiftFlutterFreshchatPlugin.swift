@@ -52,7 +52,7 @@ public class SwiftFlutterFreshchatPlugin: NSObject, FlutterPlugin {
                 freshchatConfig?.responseExpectationVisible = responseExpectationEnabled
                 freshchatConfig?.notificationSoundEnabled = notificationSoundEnabled
                 freshchatConfig?.domain = domain
-
+                freshchatConfig?.themeName = "FCTheme.plist"
                 Freshchat.sharedInstance().initWith(freshchatConfig)
                 
                 result(true)
