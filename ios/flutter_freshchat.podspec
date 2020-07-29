@@ -11,14 +11,13 @@ A Flutter plugin for integrating Freshchat in your mobile app.
   s.homepage         = 'https://github.com/fayeed/flutter_freshchat'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Fayeed Pawaskar' => 'fayeed@live.com' }
-  s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*.{h,m,swift}'
+  s.source           = { :git => "https://github.com/freshdesk/freshchat-ios.git", :tag => "3.7.3" }
+  s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.resources        = "Classes/FreshchatSDK/FCResources.bundle", "Classes/FreshchatSDK/FreshchatModels.bundle", "Classes/FreshchatSDK/FCLocalization.bundle"
-  s.ios.vendored_library = "Classes/FreshchatSDK/libFDFreshchatSDK.a"
-  s.frameworks 			 = "MobileCoreServices", "Foundation", "AVFoundation", "AudioToolbox", "CoreMedia", "CoreData", "ImageIO", "Photos", "SystemConfiguration", "Security", "WebKit"
-  s.requires_arc     = true
+  s.dependency 'FreshchatSDK'
+  s.frameworks 			 = "CoreServices", "Foundation", "AVFoundation", "AudioToolbox", "CoreMedia", "CoreData", "ImageIO", "Photos", "SystemConfiguration", "Security", "WebKit"
+  s.static_framework = true
   s.ios.deployment_target = '8.0'
 end
 
