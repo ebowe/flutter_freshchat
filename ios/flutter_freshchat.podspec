@@ -12,7 +12,7 @@ A Flutter plugin for integrating Freshchat in your mobile app.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Fayeed Pawaskar' => 'fayeed@live.com' }
   s.source           = { :git => "https://github.com/freshdesk/freshchat-ios.git", :tag => "3.7.3" }
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'Classes/**/*.{h,m,swift}'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.dependency 'FreshchatSDK'
